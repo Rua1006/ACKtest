@@ -9,5 +9,10 @@
     <select id="getLanguage" resultType="com.acktest.demo.dto.LanguageDTO">
         select * from language where language_id=#{language_id}
     </select>
-
+    <insert id="addLanguage" parameterType="com.acktest.demo.dto.LanguageDTO">
+        insert into language values (#{language_id}, #{name})
+    </insert>
+    <update id="updateLanguage" parameterType="com.acktest.demo.dto.LanguageDTO">
+        update language set language_id=#{language_id}
+    </update>
 </mapper>
